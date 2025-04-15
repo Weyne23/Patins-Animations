@@ -19,7 +19,7 @@ section.hero {
         overflow: hidden;
         height: 5rem;
         width: min-content;
-        vertical-align: bottom;
+        vertical-align: top;
     }
 
     & h1 span:nth-child(1),
@@ -217,5 +217,102 @@ section.hero {
 
     100% {  
         transform: translateY(-15rem);
+    }
+}
+
+@media (width < 50rem) {
+    section.hero {
+        flex-direction: column-reverse;
+        padding: 1rem 1.5rem 3rem;
+        gap: 2rem;
+
+        & h1 div {
+            height: 2.5rem;
+        }
+
+        & .buttons {
+            flex-direction: column-reverse;
+            width: 90%;
+            gap: 1.5rem;
+        }
+
+        & > div:nth-child(2) {
+            max-width: 19.5rem;
+            height: 19.5rem;
+
+            & img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    @keyframes slideUp {
+        /*radical in*/
+        0%, 22% {
+            transform: translateY(0);
+        }
+        /*divertida in*/
+        23% {
+            transform: translateY(calc(-2.5rem - 15px));
+        }
+    
+        25% {
+            transform: translateY(calc(-2.5rem + 10px));
+        }
+    
+        27% {
+            transform: translateY(calc(-2.5rem - 5px));
+        }
+    
+        29% {
+            transform: translateY(calc(-2.5rem + 5px));
+        }
+    
+        /*divertida static*/
+        33%, 55% {
+            transform: translateY(-2.5rem);
+        }
+        /*saudavel in*/
+    
+        56% {
+            transform: translateY(calc(-5rem - 15px));
+        }
+    
+        58% {
+            transform: translateY(calc(-5rem + 10px));
+        }
+    
+        60% {
+            transform: translateY(calc(-5rem - 5px));
+        }
+    
+        62% {
+            transform: translateY(calc(-5rem + 5px));
+        }
+        /*saudavel static*/
+        66%, 88% {
+            transform: translateY(-5rem);
+        }
+    
+        /*Radical in*/
+        89% {
+            transform: translateY(calc(-7.5rem - 15px));
+        }
+    
+        91% {
+            transform: translateY(calc(-7.5rem + 10px));
+        }
+    
+        93% {
+            transform: translateY(calc(-7.5rem - 5px));
+        }
+    
+        95% {
+            transform: translateY(calc(-7.5rem + 5px));
+        }
+    
+        100% {  
+            transform: translateY(-7.5rem);
+        }
     }
 }

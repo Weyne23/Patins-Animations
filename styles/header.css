@@ -45,3 +45,9 @@ header.top {
         transform: rotate(-30deg);
     }
 }
+
+@media (width < 50rem){
+    header.top {
+        padding-inline: 1.5rem;
+    }
+}

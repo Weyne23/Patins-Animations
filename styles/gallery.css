@@ -113,3 +113,40 @@ section.gallery {
         transform: translateY(100%);
     }
 }
+
+@media (width < 50rem) {
+    section.gallery {
+        padding: 1.5rem;
+
+        & .content {
+            gap: 1.5rem;
+            grid-template-areas: none;
+            grid-auto-flow: row;
+            grid-auto-rows: 1fr;
+        }
+
+        & figure {
+            animation-range: 150px 300px;
+
+            &[data-delay] {
+                animation-range: 150px 300PX;
+            }
+
+            &:nth-child(1) {
+                grid-area: unset;
+            }
+    
+            &:nth-child(2) {
+                grid-area: unset;
+            }
+    
+            &:nth-child(3) {
+                grid-area: unset;
+            }
+    
+            &:nth-child(4) {
+                grid-area: unset;
+            }
+        }
+    }
+}
